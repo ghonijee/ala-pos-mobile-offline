@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:ala_ui/src/token/text_styles.dart';
 import 'package:flutter/material.dart';
 
 import '../token/colors.dart';
@@ -119,21 +120,21 @@ class TypographyData {
   ///
   /// This [TypographyData] provides color but not font weight.
   static TypographyData lightTheme() => TypographyData(
-        displayLarge: const TextStyle(debugLabel: 'blackMountainView displayLarge', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 57, letterSpacing: 0.25),
-        displayMedium: const TextStyle(debugLabel: 'blackMountainView displayMedium', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 45),
-        displaySmall: const TextStyle(debugLabel: 'blackMountainView displaySmall', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 36),
-        headlineLarge: const TextStyle(debugLabel: 'blackMountainView headlineLarge', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 32),
-        headlineMedium: const TextStyle(debugLabel: 'blackMountainView headlineMedium', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 28),
-        headlineSmall: const TextStyle(debugLabel: 'blackMountainView headlineSmall', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 24),
-        titleLarge: const TextStyle(debugLabel: 'blackMountainView titleLarge', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 22),
-        titleMedium: const TextStyle(debugLabel: 'blackMountainView titleMedium', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 16),
-        titleSmall: const TextStyle(debugLabel: 'blackMountainView titleSmall', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 14),
-        bodyLarge: const TextStyle(debugLabel: 'blackMountainView bodyLarge', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 16),
-        bodyMedium: const TextStyle(debugLabel: 'blackMountainView bodyMedium', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 14),
-        bodySmall: const TextStyle(debugLabel: 'blackMountainView bodySmall', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 12),
-        labelLarge: const TextStyle(debugLabel: 'blackMountainView labelLarge', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 14),
-        labelMedium: const TextStyle(debugLabel: 'blackMountainView labelMedium', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 12),
-        labelSmall: const TextStyle(debugLabel: 'blackMountainView labelSmall', fontFamily: 'Roboto', color: ColorsToken.blackPrimary, fontSize: 11),
+        displayLarge: const TextStyles().displaylarge.copyWith(color: ColorsToken.syslightprimary),
+        displayMedium: const TextStyles().displaymedium.copyWith(color: ColorsToken.syslightprimary),
+        displaySmall: const TextStyles().displaysmall.copyWith(color: ColorsToken.syslightprimary),
+        headlineLarge: const TextStyles().headlinelarge.copyWith(color: ColorsToken.syslightprimary),
+        headlineMedium: const TextStyles().headlinemedium.copyWith(color: ColorsToken.syslightprimary),
+        headlineSmall: const TextStyles().headlinesmall.copyWith(color: ColorsToken.syslightprimary),
+        titleLarge: const TextStyles().titlelarge.copyWith(color: ColorsToken.syslightonbackground),
+        titleMedium: const TextStyles().titlemedium.copyWith(color: ColorsToken.syslightonbackground),
+        titleSmall: const TextStyles().titlesmall.copyWith(color: ColorsToken.syslightonbackground),
+        bodyLarge: const TextStyles().bodylarge.copyWith(color: ColorsToken.syslightonbackground),
+        bodyMedium: const TextStyles().bodymedium.copyWith(color: ColorsToken.syslightonbackground),
+        bodySmall: const TextStyles().bodysmall.copyWith(color: ColorsToken.syslightonbackground),
+        labelLarge: const TextStyles().labellarge,
+        labelMedium: const TextStyles().labelmedium,
+        labelSmall: const TextStyles().labelsmall,
       );
 
   /// A Material Design text theme with dark glyphs based on Roboto.

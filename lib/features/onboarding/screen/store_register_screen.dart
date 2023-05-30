@@ -1,3 +1,5 @@
+import 'package:ala_pos/features/onboarding/screen/success_register_screen.dart';
+import 'package:ala_pos/shared/assets.gen.dart';
 import 'package:ala_ui/ala_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -19,83 +21,77 @@ class StoreRegisterScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 10.h,
+                height: 12.h,
               ),
-              Icon(
-                Bootstrap.shop_window,
-                color: theme.color.primary,
-                size: 32.sp,
+              Text(
+                "Profil Usaha Kamu",
+                style: theme.typo.displayMedium,
               ),
               SizedBox(
                 height: Space.l.sp,
               ),
+              Text("Lengkapi profil usahamu dan mulai berjualan menggunakan Alapos", style: theme.typo.bodyLarge),
+              SizedBox(
+                height: Space.lg.sp,
+              ),
               Text(
-                "Buat Profil Usaha",
-                style: theme.typo.headlineLarge?.copyWith(fontWeight: FontWeight.w600),
+                "Nama Usaha",
+                style: theme.typo.labelLarge,
               ),
               SizedBox(
                 height: Space.s.sp,
               ),
-              Text("Lengkapi profil usahamu dan mulai berjualan menggunakan Alapos", style: theme.typo.bodyMedium),
-              SizedBox(
-                height: Space.m.sp,
-              ),
-              Divider(),
-              SizedBox(
-                height: Space.l.sp,
-              ),
-              Text(
-                "Nama Usaha",
-                style: theme.typo.bodySmall,
-              ),
-              SizedBox(
-                height: Space.m.sp,
-              ),
               TextField(
                 decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(
-                      vertical: 16,
-                      horizontal: 16,
-                    ),
-                    border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.surface), borderRadius: theme.shape.xs)),
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 12,
+                    horizontal: 16,
+                  ),
+                  border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
+                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
+                ),
               ),
               SizedBox(
                 height: Space.l.sp,
               ),
               Text(
                 "Nomer Telephone",
-                style: theme.typo.bodySmall,
+                style: theme.typo.labelLarge,
               ),
               SizedBox(
-                height: Space.m.sp,
+                height: Space.s.sp,
               ),
               TextField(
                 decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(
-                      vertical: 16,
-                      horizontal: 16,
-                    ),
-                    border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.surface), borderRadius: theme.shape.xs)),
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 12,
+                    horizontal: 16,
+                  ),
+                  border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
+                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
+                ),
               ),
               SizedBox(
                 height: Space.l.sp,
               ),
               Text(
                 "Alamat",
-                style: theme.typo.bodySmall,
+                style: theme.typo.labelLarge,
               ),
               SizedBox(
-                height: Space.m.sp,
+                height: Space.s.sp,
               ),
               TextField(
                 maxLines: 4,
                 minLines: 2,
                 decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(
-                      vertical: 16,
-                      horizontal: 16,
-                    ),
-                    border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.surface), borderRadius: theme.shape.xs)),
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 12,
+                    horizontal: 16,
+                  ),
+                  border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
+                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
+                ),
               ),
               SizedBox(
                 height: Space.xl.sp,
@@ -104,13 +100,15 @@ class StoreRegisterScreen extends StatelessWidget {
                 height: 50,
                 minWidth: double.infinity,
                 color: theme.color.primary,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
+                shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
                 child: Text(
                   "Simpan",
                   style: theme.typo.labelLarge?.copyWith(color: theme.color.onPrimary),
                 ),
-                onPressed: () {},
-              )
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => SuccessRegisterScreen()));
+                },
+              ),
             ],
           ),
         ),

@@ -32,8 +32,10 @@ class BaseUI extends StatelessWidget {
     return Builder(builder: (context) {
       ThemeData themeLight = ThemeAdapter.toThemeData(ThemeFoundation.light());
       ThemeData themeDark = ThemeAdapter.toThemeData(ThemeFoundation.dark());
+      final Brightness platformBrightness = MediaQuery.platformBrightnessOf(context);
+      final bool useDarkTheme = themeMode == ThemeMode.dark || (themeMode == ThemeMode.system && platformBrightness == Brightness.dark);
       return ThemeProvider(
-        theme: themeMode == ThemeMode.light ? ThemeFoundation.light() : ThemeFoundation.dark(),
+        theme: useDarkTheme ? ThemeFoundation.dark() : ThemeFoundation.light(),
         child: Builder(
           builder: (context) {
             return builder?.call(context, themeLight, themeDark, themeMode) ?? child!;
