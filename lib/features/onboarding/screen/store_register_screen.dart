@@ -1,7 +1,6 @@
 import 'package:ala_ui/ala_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class StoreRegisterScreen extends StatelessWidget {
@@ -22,16 +21,28 @@ class StoreRegisterScreen extends StatelessWidget {
               SizedBox(
                 height: 10.h,
               ),
-              Text(
-                "Informasi Usaha",
-                style: theme.typo.headlineLarge?.copyWith(fontWeight: FontWeight.w600),
+              Icon(
+                Bootstrap.shop_window,
+                color: theme.color.primary,
+                size: 32.sp,
               ),
               SizedBox(
                 height: Space.l.sp,
               ),
-              Text("Lengkapi profil usahamu dan mulai berjualan menggunakan Alapos", style: theme.typo.titleSmall),
+              Text(
+                "Buat Profil Usaha",
+                style: theme.typo.headlineLarge?.copyWith(fontWeight: FontWeight.w600),
+              ),
               SizedBox(
-                height: Space.xl.sp,
+                height: Space.s.sp,
+              ),
+              Text("Lengkapi profil usahamu dan mulai berjualan menggunakan Alapos", style: theme.typo.bodyMedium),
+              SizedBox(
+                height: Space.m.sp,
+              ),
+              Divider(),
+              SizedBox(
+                height: Space.l.sp,
               ),
               Text(
                 "Nama Usaha",
@@ -46,7 +57,7 @@ class StoreRegisterScreen extends StatelessWidget {
                       vertical: 16,
                       horizontal: 16,
                     ),
-                    border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.surface))),
+                    border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.surface), borderRadius: theme.shape.xs)),
               ),
               SizedBox(
                 height: Space.l.sp,
@@ -64,15 +75,36 @@ class StoreRegisterScreen extends StatelessWidget {
                       vertical: 16,
                       horizontal: 16,
                     ),
-                    border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.surface))),
+                    border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.surface), borderRadius: theme.shape.xs)),
+              ),
+              SizedBox(
+                height: Space.l.sp,
+              ),
+              Text(
+                "Alamat",
+                style: theme.typo.bodySmall,
+              ),
+              SizedBox(
+                height: Space.m.sp,
+              ),
+              TextField(
+                maxLines: 4,
+                minLines: 2,
+                decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 16,
+                      horizontal: 16,
+                    ),
+                    border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.surface), borderRadius: theme.shape.xs)),
               ),
               SizedBox(
                 height: Space.xl.sp,
               ),
               MaterialButton(
-                height: 45,
+                height: 50,
                 minWidth: double.infinity,
-                color: theme.color.primaryDark,
+                color: theme.color.primary,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
                 child: Text(
                   "Simpan",
                   style: theme.typo.labelLarge?.copyWith(color: theme.color.onPrimary),
