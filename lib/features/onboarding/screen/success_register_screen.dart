@@ -1,3 +1,4 @@
+import 'package:ala_pos/features/pos/screen/pos_main_screen.dart';
 import 'package:ala_pos/shared/assets.gen.dart';
 import 'package:ala_ui/ala_ui.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,7 @@ class SuccessRegisterScreen extends StatelessWidget {
                 style: theme.typo.labelLarge?.copyWith(color: theme.color.onPrimary),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (_) => const SuccessRegisterScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (_) => const PosMainScreen()));
               },
             ),
           ],

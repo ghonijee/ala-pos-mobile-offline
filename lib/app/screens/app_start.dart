@@ -3,6 +3,8 @@ import 'package:ala_ui/ala_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../router/router_app.dart';
+
 class AppStart extends StatelessWidget {
   const AppStart({super.key});
 
@@ -17,7 +19,9 @@ class AppStart extends StatelessWidget {
             theme: themeLight,
             darkTheme: themeDark,
             themeMode: themeMode,
-            home: SplashScreen(),
+            initialRoute: "/splashscreen",
+            // home: const SplashScreen(),
+            routes: RouterApp.init(),
           );
         },
       );
