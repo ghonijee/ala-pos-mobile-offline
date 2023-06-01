@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:ala_pos/features/pos/screen/pos_cart_screen.dart';
 import 'package:ala_pos/shared/widget/appbar/appbar_search_component.dart';
 import 'package:ala_ui/ala_ui.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class PosMainScreen extends StatelessWidget {
               // AppBarSearch
               AppBarSearchComponent(
                 leadingIcon: Icon(
-                  BoxIcons.bx_menu,
+                  EvaIcons.menu_2_outline,
                   color: context.theme.color.onPrimary,
                   size: 24.px,
                 ),
@@ -47,7 +48,7 @@ class PosMainScreen extends StatelessWidget {
                 actions: [
                   InkWell(
                     child: Icon(
-                      BoxIcons.bxs_camera,
+                      Bootstrap.camera,
                       size: 24.px,
                       color: context.theme.color.onPrimary,
                     ),
@@ -59,7 +60,7 @@ class PosMainScreen extends StatelessWidget {
                       ? InkWell(
                           // onTap: () => viewMode.value = ViewMode.Grid,
                           child: Icon(
-                            EvaIcons.list,
+                            EvaIcons.list_outline,
                             size: 24.px,
                             color: context.theme.color.onPrimary,
                           ),
@@ -67,7 +68,7 @@ class PosMainScreen extends StatelessWidget {
                       : InkWell(
                           // onTap: () => viewMode.value = ViewMode.List,
                           child: Icon(
-                            EvaIcons.grid,
+                            EvaIcons.grid_outline,
                             size: 24.px,
                             color: context.theme.color.onPrimary,
                           ),
@@ -93,6 +94,7 @@ class PosMainScreen extends StatelessWidget {
                           height: 32,
                           width: 100.w - 32,
                           child: ListView(
+                            padding: EdgeInsets.zero,
                             scrollDirection: Axis.horizontal,
                             // shrinkWrap: true,
                             children: [
@@ -157,6 +159,11 @@ class PosMainScreen extends StatelessWidget {
         GestureDetector(
           onTap: () {
             // context.router.pushNamed(PosRouteName.PosCart);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PosCartScreen(),
+                ));
           },
           child: Align(
             alignment: Alignment.bottomCenter,
@@ -177,12 +184,12 @@ class PosMainScreen extends StatelessWidget {
                     children: [
                       Icon(EvaIcons.shopping_cart, color: context.theme.color.onPrimary),
                       SizedBox(
-                        width: 8,
+                        width: 12,
                       ),
                       Text("Total ", style: context.theme.typo.bodyLarge!.copyWith(color: context.theme.color.onPrimary)),
                     ],
                   ),
-                  Text("99.000 (10)", style: context.theme.typo.bodyLarge!.copyWith(color: context.theme.color.onPrimary)),
+                  Text("99.000 (10)", style: context.theme.typo.titleMedium!.copyWith(color: context.theme.color.onPrimary)),
                 ],
               ),
             ),

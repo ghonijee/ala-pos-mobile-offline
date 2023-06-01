@@ -21,7 +21,7 @@ class _ProductItemListComponentState extends State<ProductItemListComponent> {
         alignment: Alignment.center,
         width: 70.px,
         height: 70.px,
-        color: theme.color.primaryContainer,
+        decoration: BoxDecoration(color: theme.color.primaryContainer, borderRadius: theme.shape.m),
         child: Text(
           "SA",
           style: theme.typo.headlineMedium!.copyWith(color: theme.color.primary),
@@ -42,11 +42,11 @@ class _ProductItemListComponentState extends State<ProductItemListComponent> {
         children: [
           Text(
             "Stok",
-            style: theme.typo.labelMedium,
+            style: theme.typo.labelMedium!.copyWith(color: theme.color.onBackground),
           ),
           Text(
             "99",
-            style: theme.typo.labelMedium,
+            style: theme.typo.labelMedium!.copyWith(color: theme.color.onBackground),
           ),
         ],
       ),

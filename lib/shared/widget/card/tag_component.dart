@@ -29,15 +29,15 @@ class _TagsComponentState extends State<TagsComponent> {
         margin: EdgeInsets.only(right: 4),
         padding: EdgeInsets.symmetric(horizontal: 12),
         decoration: BoxDecoration(
-          color: widget.isActive ? theme.color.secondaryContainer : theme.color.surface,
+          color: widget.isActive ? theme.color.primaryContainer : theme.color.surface,
           borderRadius: BorderRadius.all(Radius.circular(8)),
           border: Border.all(
-            color: widget.isActive ? theme.color.secondaryContainer : theme.color.outline,
+            color: widget.isActive ? theme.color.primary : theme.color.outline,
           ),
         ),
         child: Text(
           widget.label,
-          style: theme.typo.labelSmall!.copyWith(color: widget.isActive ? theme.color.onSecondaryContainer : theme.color.onSurface),
+          style: theme.typo.labelSmall!.copyWith(color: widget.isActive ? theme.color.onPrimaryContainer : theme.color.onSurface),
         ),
       ),
     );

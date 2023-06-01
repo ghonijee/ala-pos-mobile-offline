@@ -87,7 +87,7 @@ class SideMenuView extends StatelessWidget {
                       onTap: () {
                         // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
                       },
-                      iconData: EvaIcons.plus_square,
+                      iconData: EvaIcons.plus_square_outline,
                       isActive: true,
                     );
                   },
@@ -100,7 +100,7 @@ class SideMenuView extends StatelessWidget {
                   onTap: () {
                     // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
                   },
-                  iconData: EvaIcons.book,
+                  iconData: EvaIcons.book_outline,
                 ),
                 SizedBox(
                   height: Space.s,
@@ -110,7 +110,7 @@ class SideMenuView extends StatelessWidget {
                   onTap: () {
                     // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
                   },
-                  iconData: EvaIcons.book_open,
+                  iconData: EvaIcons.pie_chart_outline,
                 ),
                 SizedBox(
                   height: Space.s,
@@ -120,7 +120,7 @@ class SideMenuView extends StatelessWidget {
                   onTap: () {
                     // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
                   },
-                  iconData: EvaIcons.book,
+                  iconData: EvaIcons.archive_outline,
                 ),
                 SizedBox(
                   height: Space.s,
