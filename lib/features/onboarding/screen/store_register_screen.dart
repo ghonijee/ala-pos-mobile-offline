@@ -16,7 +16,7 @@ class StoreRegisterScreen extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 20.sp),
           width: 100.w,
-          height: 95.h,
+          // height: 95.h,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -108,6 +108,9 @@ class StoreRegisterScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (_) => SuccessRegisterScreen()));
                 },
+              ),
+              SizedBox(
+                height: Space.xl.sp,
               ),
             ],
           ),

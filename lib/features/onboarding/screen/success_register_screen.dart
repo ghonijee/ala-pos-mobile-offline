@@ -16,10 +16,11 @@ class SuccessRegisterScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         height: 100.h,
-        width: 100.h,
+        width: 100.w,
         padding: EdgeInsets.symmetric(horizontal: 20.sp),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Assets.images.successIllustrator.svg(height: 30.h),
             SizedBox(
@@ -43,7 +44,7 @@ class SuccessRegisterScreen extends StatelessWidget {
             ),
             MaterialButton(
               height: 50,
-              minWidth: double.infinity,
+              minWidth: 70.sp,
               color: theme.color.primary,
               shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
               child: Text(

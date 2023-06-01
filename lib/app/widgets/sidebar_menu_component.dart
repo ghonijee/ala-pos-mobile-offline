@@ -20,7 +20,7 @@ class SideMenuView extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.symmetric(horizontal: 8),
-            height: 150,
+            height: 50.sp,
             child: DrawerHeader(
                 child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -71,69 +71,77 @@ class SideMenuView extends StatelessWidget {
           SizedBox(
             height: Space.m,
           ),
-          FutureBuilder<bool>(
-            initialData: true,
-            builder: (context, snapshot) {
-              if (snapshot.data == false) {
-                return SizedBox();
-              }
-              return SideMenuItemWidget(
-                title: "Kasir",
-                onTap: () {
-                  // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
-                },
-                iconData: EvaIcons.plus_square,
-                isActive: true,
-              );
-            },
+          Expanded(
+            // height: 100.h - 150 - Space.m,
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                FutureBuilder<bool>(
+                  initialData: true,
+                  builder: (context, snapshot) {
+                    if (snapshot.data == false) {
+                      return SizedBox();
+                    }
+                    return SideMenuItemWidget(
+                      title: "Kasir",
+                      onTap: () {
+                        // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
+                      },
+                      iconData: EvaIcons.plus_square,
+                      isActive: true,
+                    );
+                  },
+                ),
+                SizedBox(
+                  height: Space.s,
+                ),
+                SideMenuItemWidget(
+                  title: "Riwayat Transaksi",
+                  onTap: () {
+                    // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
+                  },
+                  iconData: EvaIcons.book,
+                ),
+                SizedBox(
+                  height: Space.s,
+                ),
+                SideMenuItemWidget(
+                  title: "Laporan",
+                  onTap: () {
+                    // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
+                  },
+                  iconData: EvaIcons.book_open,
+                ),
+                SizedBox(
+                  height: Space.s,
+                ),
+                SideMenuItemWidget(
+                  title: "Kelola Produk",
+                  onTap: () {
+                    // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
+                  },
+                  iconData: EvaIcons.book,
+                ),
+                SizedBox(
+                  height: Space.s,
+                ),
+                // SideMenuItemWidget(
+                //   title: "Kelola Toko",
+                //   onTap: () {
+                //     // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
+                //   },
+                //   iconData: EvaIcons.settings,
+                // ),
+              ],
+            ),
           ),
-          SizedBox(
-            height: Space.s,
-          ),
-          SideMenuItemWidget(
-            title: "Riwayat Transaksi",
-            onTap: () {
-              // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
-            },
-            iconData: EvaIcons.book,
-          ),
-          SizedBox(
-            height: Space.s,
-          ),
-          SideMenuItemWidget(
-            title: "Laporan",
-            onTap: () {
-              // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
-            },
-            iconData: EvaIcons.book_open,
-          ),
-          SizedBox(
-            height: Space.s,
-          ),
-          SideMenuItemWidget(
-            title: "Kelola Produk",
-            onTap: () {
-              // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
-            },
-            iconData: EvaIcons.book,
-          ),
-          SizedBox(
-            height: Space.s,
-          ),
+          // Expanded(child: SizedBox()),
           // SideMenuItemWidget(
-          //   title: "Kelola Toko",
-          //   onTap: () {
-          //     // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
-          //   },
-          //   iconData: EvaIcons.settings,
+          //   title: "Keluar ",
+          //   onTap: () async {},
+          //   iconData: Icons.logout_rounded,
           // ),
-          Expanded(child: SizedBox()),
-          SideMenuItemWidget(
-            title: "Keluar ",
-            onTap: () async {},
-            iconData: Icons.logout_rounded,
-          ),
-          SizedBox(height: Space.s),
+          // SizedBox(height: Space.s),
         ],
       ),
     );
