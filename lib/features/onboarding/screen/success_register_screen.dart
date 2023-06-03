@@ -42,18 +42,13 @@ class SuccessRegisterScreen extends StatelessWidget {
             SizedBox(
               height: Space.xxl.sp,
             ),
-            MaterialButton(
-              height: 50,
-              minWidth: 70.sp,
-              color: theme.color.primary,
-              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
-              child: Text(
-                "Mulai Berjualan",
-                style: theme.typo.labelLarge?.copyWith(color: theme.color.onPrimary),
-              ),
-              onPressed: () {
+            ButtonComponent(
+              type: ButtonType.Primary,
+              size: ButtonSize.Large,
+              onPress: () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => const PosMainScreen()));
               },
+              text: "Mulai Berjualan",
             ),
           ],
         ),

@@ -20,94 +20,47 @@ class StoreRegisterScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 12.h,
-              ),
+              FreeSpace.h(12.h),
               Text(
                 "Profil Usaha Kamu",
                 style: theme.typo.displayMedium,
               ),
-              SizedBox(
-                height: Space.l.sp,
-              ),
-              Text("Lengkapi profil usahamu dan mulai berjualan menggunakan Alapos", style: theme.typo.bodyLarge),
-              SizedBox(
-                height: Space.lg.sp,
-              ),
-              Text(
-                "Nama Usaha",
-                style: theme.typo.labelLarge,
-              ),
-              SizedBox(
-                height: Space.s.sp,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(
-                    vertical: 12,
-                    horizontal: 16,
-                  ),
-                  border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
-                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
-                ),
+              FreeSpace.h(Space.l.sp),
+              Text("Lengkapi profil usahamu dan mulai berjualan menggunakan Alapos.", style: theme.typo.bodyLarge),
+              FreeSpace.h(Space.xl.sp),
+              TextFieldComponent(
+                withLabel: true,
+                labelText: "Nama Usaha",
+                hintText: "Ghoni Jee",
               ),
               SizedBox(
                 height: Space.l.sp,
               ),
-              Text(
-                "Nomer Telephone",
-                style: theme.typo.labelLarge,
-              ),
-              SizedBox(
-                height: Space.s.sp,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(
-                    vertical: 12,
-                    horizontal: 16,
-                  ),
-                  border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
-                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
-                ),
+              TextFieldComponent(
+                withLabel: true,
+                labelText: "Nomor Telephone",
+                hintText: "+6281666777888",
               ),
               SizedBox(
                 height: Space.l.sp,
               ),
-              Text(
-                "Alamat",
-                style: theme.typo.labelLarge,
-              ),
-              SizedBox(
-                height: Space.s.sp,
-              ),
-              TextField(
+              TextFieldComponent(
+                withLabel: true,
+                labelText: "Alamat",
                 maxLines: 4,
-                minLines: 2,
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(
-                    vertical: 12,
-                    horizontal: 16,
-                  ),
-                  border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
-                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
-                ),
+                minLines: 3,
+                hintText: "Jl. Maju bersama No. 02 - Malang",
               ),
               SizedBox(
                 height: Space.xl.sp,
               ),
-              MaterialButton(
-                height: 50,
-                minWidth: double.infinity,
-                color: theme.color.primary,
-                shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
-                child: Text(
-                  "Simpan",
-                  style: theme.typo.labelLarge?.copyWith(color: theme.color.onPrimary),
-                ),
-                onPressed: () {
+              ButtonComponent(
+                type: ButtonType.Primary,
+                size: ButtonSize.FullWidth,
+                onPress: () {
                   Navigator.push(context, MaterialPageRoute(builder: (_) => SuccessRegisterScreen()));
                 },
+                text: "Simpan",
               ),
               SizedBox(
                 height: Space.xl.sp,

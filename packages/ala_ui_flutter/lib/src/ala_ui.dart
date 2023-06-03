@@ -10,4 +10,5 @@ export 'foundation/typography_data.dart';
 export 'theme_provider.dart';
 export 'token/colors.dart';
 export 'token/size.dart';
-export 'utils/context_extension.dart';
+export 'utils/utils.dart';
+export 'atom/atom.dart';

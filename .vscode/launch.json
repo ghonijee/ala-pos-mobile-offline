@@ -1,0 +1,71 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ala-pos-mobile-offline",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "ala-pos-mobile-offline (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "ala-pos-mobile-offline (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "ala_ui_flutter",
+            "cwd": "packages/ala_ui_flutter",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "ala_ui_flutter (profile mode)",
+            "cwd": "packages/ala_ui_flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "ala_ui_flutter (release mode)",
+            "cwd": "packages/ala_ui_flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "responsive_sizer",
+            "cwd": "packages/responsive_sizer",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "responsive_sizer (profile mode)",
+            "cwd": "packages/responsive_sizer",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "responsive_sizer (release mode)",
+            "cwd": "packages/responsive_sizer",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "result_type",
+            "cwd": "packages/result_type",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}

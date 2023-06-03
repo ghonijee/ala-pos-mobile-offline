@@ -1,3 +1,5 @@
+import 'package:ala_pos/features/pos/screen/pos_cart_item_screen.dart';
+import 'package:ala_pos/features/pos/widget/add_customer_bottom_sheet.dart';
 import 'package:ala_pos/features/pos/widget/cart_item_component.dart';
 import 'package:ala_ui/ala_ui.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+
+import '../widget/add_discount_bottom_sheet.dart';
 
 class PosCartScreen extends StatelessWidget {
   const PosCartScreen({super.key});
@@ -15,6 +19,7 @@ class PosCartScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: theme.color.primary,
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             // AppBar
@@ -37,9 +42,7 @@ class PosCartScreen extends StatelessWidget {
                       color: context.theme.color.onPrimary,
                     ),
                   ),
-                  SizedBox(
-                    width: Space.xl,
-                  ),
+                  FreeSpace.w(Space.xl),
                   true
                       ? Text(
                           "Keranjang",
@@ -59,18 +62,17 @@ class PosCartScreen extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            // showModalBottomSheet(
-                            //   shape: RoundedRectangleBorder(
-                            //     borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
-                            //   ),
-                            //   isScrollControlled: true,
-                            //   // isDismissible: true,
-                            //   context: context,
-                            //   builder: (context) {
-                            //     // return AddDiscountBottomSheet();
-                            //   },
-                            // );
-                            // context.router.pop();
+                            showModalBottomSheet(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
+                              ),
+                              isScrollControlled: true,
+                              // isDismissible: true,
+                              context: context,
+                              builder: (context) {
+                                return AddDiscountBottomSheet();
+                              },
+                            );
                           },
                           child: Icon(
                             EvaIcons.pricetags_outline,
@@ -78,22 +80,21 @@ class PosCartScreen extends StatelessWidget {
                             color: context.theme.color.onPrimary,
                           ),
                         ),
-                        SizedBox(
-                          width: Space.l,
-                        ),
+                        FreeSpace.w(Space.l),
                         InkWell(
                           onTap: () {
-                            // showModalBottomSheet(
-                            //   shape: RoundedRectangleBorder(
-                            //     borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
-                            //   ),
-                            //   isScrollControlled: true,
-                            //   // isDismissible: true,
-                            //   context: context,
-                            //   builder: (context) {
-                            //     // return AddCustomerBottomSheet();
-                            //   },
-                            // );
+                            showModalBottomSheet(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
+                              ),
+                              isScrollControlled: true,
+                              // isDismissible: true,
+                              context: context,
+                              builder: (context) {
+                                // return AddCustomerBottomSheet();
+                                return AddCustomerBottomSheet();
+                              },
+                            );
                           },
                           child: Icon(
                             EvaIcons.person_add_outline,
@@ -121,7 +122,13 @@ class PosCartScreen extends StatelessWidget {
                         itemCount: 4,
                         itemBuilder: (context, index) {
                           return CartItemComponent(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => PosCartItemDetailScreen(),
+                                  ));
+                            },
                           );
                           // var item = ref.watch(cartProductProvider).items[index];
                           // return CartItemWidget(
@@ -139,48 +146,40 @@ class PosCartScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                     decoration: BoxDecoration(
                       color: theme.color.surface,
-                      border: Border(
-                        top: BorderSide(
-                          color: theme.color.outline,
-                        ),
-                      ),
+                      // border: Border(
+                      //   top: BorderSide(
+                      //     color: theme.color.outline,
+                      //   ),
+                      // ),
                     ),
                     child: Column(
                       children: [
                         Column(
                           children: [
-                            // ResumeLabelValueWidget(label: "Subtotal", value: transactionState.model!.amount!.toIDR()),
-                            // Spacing.height(
-                            //   size: 8,
-                            // ),
-                            // ResumeLabelValueWidget(label: "Diskon", value: transactionState.model!.discount.toIDR()),
+                            const ResumeLabelValueWidget(label: "Subtotal", value: "Rp. 80.000"),
+                            SizedBox(
+                              height: 8.sp,
+                            ),
+                            const ResumeLabelValueWidget(label: "Diskon", value: "0"),
                           ],
                         ),
                         const SizedBox(
                           height: 8,
                         ),
-
-                        // ResumeLabelValueWidget(
-                        //   label: "Total",
-                        //   value: transactionState.model!.result.toIDR(),
-                        //   isBold: true,
-                        // ),
-                        const SizedBox(
-                          height: 20,
+                        const ResumeLabelValueWidget(
+                          label: "Total",
+                          value: "Rp. 80.000",
+                          isBold: true,
                         ),
-                        MaterialButton(
-                          height: 50,
-                          minWidth: 70.sp,
-                          color: theme.color.primary,
-                          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
-                          child: Text(
-                            "Bayar",
-                            style: theme.typo.labelLarge?.copyWith(color: theme.color.onPrimary),
-                          ),
-                          onPressed: () {
-                            // Navigator.push(context, MaterialPageRoute(builder: (_) => const PosMainScreen()));
+                        FreeSpace.h(20),
+                        ButtonComponent(
+                          text: "Bayar",
+                          size: ButtonSize.FullWidth,
+                          onPress: () {
+                            //
                           },
                         ),
+                        FreeSpace.h(20),
                       ],
                     ),
                   )
@@ -190,6 +189,37 @@ class PosCartScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class ResumeLabelValueWidget extends StatelessWidget {
+  const ResumeLabelValueWidget({
+    Key? key,
+    required this.label,
+    required this.value,
+    this.isBold = false,
+  }) : super(key: key);
+  final String label;
+  final String value;
+  final bool isBold;
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = BaseUI.of(context);
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          label,
+          style: isBold ? theme.typo.bodyMedium!.copyWith(fontWeight: FontWeight.bold) : theme.typo.bodyMedium,
+        ),
+        Text(
+          value,
+          style: isBold ? theme.typo.bodyMedium!.copyWith(fontWeight: FontWeight.bold) : theme.typo.bodyMedium,
+        ),
+      ],
     );
   }
 }

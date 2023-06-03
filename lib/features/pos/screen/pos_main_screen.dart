@@ -20,10 +20,10 @@ class PosMainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ViewMode viewMode = ViewMode.List;
-    final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     return Scaffold(
-      key: _scaffoldKey,
+      key: scaffoldKey,
       drawer: const SideMenuView(),
       backgroundColor: context.theme.color.primary,
       body: Stack(children: [
@@ -42,7 +42,7 @@ class PosMainScreen extends StatelessWidget {
                   size: 24.px,
                 ),
                 leadingOnTap: () {
-                  _scaffoldKey.currentState!.openDrawer();
+                  scaffoldKey.currentState!.openDrawer();
                   // Scaffold.of(context).openDrawer();
                 },
                 actions: [

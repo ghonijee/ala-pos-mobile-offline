@@ -1,6 +1,7 @@
 import 'package:ala_ui/ala_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class CartItemComponent extends StatefulWidget {
   CartItemComponent({super.key, required this.onTap});
@@ -21,7 +22,7 @@ class _CartItemComponentState extends State<CartItemComponent> {
     return InkWell(
       onTap: widget.onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         decoration: BoxDecoration(
           color: theme.color.surface,
         ),
@@ -37,13 +38,11 @@ class _CartItemComponentState extends State<CartItemComponent> {
                 alignment: Alignment.center,
                 child: Text(
                   "SB",
-                  style: theme.typo.bodyMedium,
+                  style: theme.typo.titleSmall,
                 ),
               ),
             ),
-            SizedBox(
-              width: 16,
-            ),
+            FreeSpace.w(Space.l),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -53,20 +52,16 @@ class _CartItemComponentState extends State<CartItemComponent> {
                     "Nama Produk ini",
                     style: theme.typo.bodyMedium,
                   ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  false
+                  FreeSpace.h(4.sp),
+                  true
                       ? Text.rich(
                           TextSpan(
                             text: "15.000",
-                            style: theme.typo.bodyMedium!.copyWith(decoration: TextDecoration.lineThrough),
+                            style: theme.typo.bodyMedium!.copyWith(decoration: TextDecoration.lineThrough, color: theme.color.error),
                             children: [
                               TextSpan(
                                 text: " " + "12.000",
-                                style: theme.typo.bodyMedium!.copyWith(
-                                  decoration: TextDecoration.none,
-                                ),
+                                style: theme.typo.bodyMedium!.copyWith(decoration: TextDecoration.none, color: theme.color.onSurface),
                               )
                             ],
                           ),
