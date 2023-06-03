@@ -15,6 +15,7 @@ class TextFieldComponent extends StatefulWidget {
   final int? maxLines;
   final Widget? prefix;
   final Widget? suffix;
+  final TextAlign textAlign;
 
   /// {@macro flutter.widgets.editableText.inputFormatters}
   final List<TextInputFormatter>? inputFormatters;
@@ -31,6 +32,7 @@ class TextFieldComponent extends StatefulWidget {
     this.minLines,
     this.prefix,
     this.suffix,
+    this.textAlign = TextAlign.start,
   }) : super(key: key);
 
   @override
@@ -66,6 +68,7 @@ class _TextFieldComponentState extends State<TextFieldComponent> {
           onChanged: widget.onChange,
           obscureText: widget.obscureText,
           inputFormatters: widget.inputFormatters,
+          textAlign: widget.textAlign,
           decoration: InputDecoration(
             hintText: widget.hintText,
             hintStyle: theme.typo.labelLarge,

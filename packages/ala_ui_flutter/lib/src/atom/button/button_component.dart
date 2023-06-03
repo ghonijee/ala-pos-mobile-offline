@@ -9,6 +9,7 @@ enum ButtonType {
 
 enum ButtonSize {
   FullWidth,
+  AutoWidth,
   Large,
   Medium,
   Small,
@@ -60,6 +61,8 @@ class _ButtonComponentState extends State<ButtonComponent> {
     switch (widget.size) {
       case ButtonSize.FullWidth:
         return const Size.fromHeight(48);
+      case ButtonSize.AutoWidth:
+        return const Size.fromHeight(48);
       case ButtonSize.Large:
         return const Size(250, 48);
       case ButtonSize.Medium:
@@ -81,6 +84,7 @@ class _ButtonComponentState extends State<ButtonComponent> {
         elevation: widget.elevation,
         backgroundColor: getBackgroundColorValue(context),
         minimumSize: widget.customSize ?? buttonSizeValue(),
+        // maximumSize: widget.size == ButtonSize.AutoWidth ? Size.fromHeight(48) : buttonSizeValue(),
         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
       ),
       child: widget.isLoading

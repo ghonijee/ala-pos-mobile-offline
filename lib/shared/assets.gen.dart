@@ -14,6 +14,9 @@ import 'package:flutter/services.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/agree.svg
+  SvgGenImage get agree => const SvgGenImage('assets/images/agree.svg');
+
   /// File path: assets/images/alapos_logo_dark.svg
   SvgGenImage get alaposLogoDark =>
       const SvgGenImage('assets/images/alapos_logo_dark.svg');
@@ -26,13 +29,27 @@ class $AssetsImagesGen {
   SvgGenImage get formIllustrator =>
       const SvgGenImage('assets/images/form_illustrator.svg');
 
+  /// File path: assets/images/order_confirmed.svg
+  SvgGenImage get orderConfirmed =>
+      const SvgGenImage('assets/images/order_confirmed.svg');
+
+  /// File path: assets/images/receipt.svg
+  SvgGenImage get receipt => const SvgGenImage('assets/images/receipt.svg');
+
   /// File path: assets/images/success_illustrator.svg
   SvgGenImage get successIllustrator =>
       const SvgGenImage('assets/images/success_illustrator.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [alaposLogoDark, alaposLogoLight, formIllustrator, successIllustrator];
+  List<SvgGenImage> get values => [
+        agree,
+        alaposLogoDark,
+        alaposLogoLight,
+        formIllustrator,
+        orderConfirmed,
+        receipt,
+        successIllustrator
+      ];
 }
 
 class Assets {

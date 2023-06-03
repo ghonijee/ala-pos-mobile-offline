@@ -1,4 +1,5 @@
 import 'package:ala_pos/features/pos/screen/pos_cart_item_screen.dart';
+import 'package:ala_pos/features/pos/screen/pos_payment_screen.dart';
 import 'package:ala_pos/features/pos/widget/add_customer_bottom_sheet.dart';
 import 'package:ala_pos/features/pos/widget/cart_item_component.dart';
 import 'package:ala_ui/ala_ui.dart';
@@ -130,13 +131,6 @@ class PosCartScreen extends StatelessWidget {
                                   ));
                             },
                           );
-                          // var item = ref.watch(cartProductProvider).items[index];
-                          // return CartItemWidget(
-                          //   itemModel: item,
-                          //   onTap: () {
-                          //     // context.router.pushNamed(PosRouteName.PosCartDetail.replaceFirst(RegExp(r":id"), index.toString()));
-                          //   },
-                          // );
                         },
                       ),
                     ),
@@ -173,10 +167,14 @@ class PosCartScreen extends StatelessWidget {
                         ),
                         FreeSpace.h(20),
                         ButtonComponent(
-                          text: "Bayar",
+                          text: "Checkout",
                           size: ButtonSize.FullWidth,
                           onPress: () {
-                            //
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PosPaymentScreen(),
+                                ));
                           },
                         ),
                         FreeSpace.h(20),

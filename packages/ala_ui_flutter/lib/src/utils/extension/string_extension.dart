@@ -2,6 +2,10 @@ import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 import 'package:intl/intl.dart';
 
 extension extensionString on String {
+  String currency() {
+    return toCurrencyString(this, mantissaLength: 0, leadingSymbol: "Rp. ");
+  }
+
   String initial() {
     return this.isNotEmpty ? this.trim().split(RegExp(' +')).map((s) => s[0]).take(2).join().toUpperCase() : '';
   }
@@ -52,7 +56,7 @@ extension ExtensionInt on num {
   /// int test = 10000;
   /// String result = test.toIDR();
   /// print(result) // Rp. 10.000
-  /// ``
+  /// ```
   String toIDR({decimalDigit = 0}) {
     NumberFormat currencyFormatter = NumberFormat.currency(
       locale: 'id',
@@ -60,6 +64,10 @@ extension ExtensionInt on num {
       decimalDigits: decimalDigit,
     );
     return currencyFormatter.format(this);
+  }
+
+  String currency() {
+    return toCurrencyString(toString(), mantissaLength: 0, leadingSymbol: "Rp. ");
   }
 
   /// Convert from int to string
@@ -70,10 +78,6 @@ extension ExtensionInt on num {
   /// print(result) // 10.000
   /// ```
   String toThousandSeparator() {
-    return toCurrencyString(
-      this.toString(),
-      thousandSeparator: ThousandSeparator.Period,
-      mantissaLength: 0,
-    );
+    return toCurrencyString(toString(), mantissaLength: 0);
   }
 }
