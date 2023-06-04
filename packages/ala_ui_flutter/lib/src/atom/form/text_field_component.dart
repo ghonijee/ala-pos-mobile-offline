@@ -74,14 +74,16 @@ class _TextFieldComponentState extends State<TextFieldComponent> {
             hintStyle: theme.typo.labelLarge,
             filled: true,
             fillColor: theme.color.surface,
+            // icon: widget.prefix,
+
             contentPadding: const EdgeInsets.symmetric(
               vertical: 12,
               horizontal: 16,
             ),
             border: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
             enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: theme.color.outlineVariant), borderRadius: theme.shape.xs),
-            prefix: widget.prefix,
-            suffix: widget.suffix,
+            prefixIcon: widget.prefix,
+            suffixIcon: widget.suffix,
           ),
         ),
       ],

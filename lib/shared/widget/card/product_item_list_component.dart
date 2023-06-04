@@ -19,12 +19,12 @@ class _ProductItemListComponentState extends State<ProductItemListComponent> {
       textColor: Theme.of(context).colorScheme.primary,
       leading: Container(
         alignment: Alignment.center,
-        width: 70.px,
-        height: 70.px,
+        width: 60.px,
+        height: 60.px,
         decoration: BoxDecoration(color: theme.color.primaryContainer, borderRadius: theme.shape.m),
         child: Text(
           "SA",
-          style: theme.typo.headlineMedium!.copyWith(color: theme.color.primary),
+          style: theme.typo.titleMedium!.copyWith(color: theme.color.primary),
         ),
       ),
       title: Text(

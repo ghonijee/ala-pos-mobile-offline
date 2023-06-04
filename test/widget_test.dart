@@ -12,5 +12,5 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ala_pos/main.dart';
 
 void main() {
-  runApp(const AppStart());
+  runApp(AppStart());
 }

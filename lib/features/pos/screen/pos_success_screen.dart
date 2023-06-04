@@ -71,7 +71,7 @@ class PosSuccessScreen extends StatelessWidget {
                         ),
                         ButtonComponent(
                           onPress: () {
-                            // context.router.navigateNamed(PosRouteName.Pos);
+                            // context.router.replaceNamed(PosRouteName.Pos);
                           },
                           text: "Selesai",
                           customSize: Size(38.w, 48),

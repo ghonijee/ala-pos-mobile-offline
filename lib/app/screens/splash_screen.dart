@@ -1,9 +1,12 @@
+import 'package:ala_pos/app/router/app_router.gr.dart';
 import 'package:ala_pos/shared/assets.gen.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../features/onboarding/screen/store_register_screen.dart';
 
+@RoutePage(name: "splash")
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -13,15 +16,10 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState() {
-    // TODO: implement initState
-    Future.delayed(Duration(seconds: 2), () {
-      Navigator.push(context, MaterialPageRoute(builder: (_) => StoreRegisterScreen()));
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration(seconds: 2), () {
+      context.router.replace(const PosMain());
+    });
     return Scaffold(
       body: Center(
         child: Container(

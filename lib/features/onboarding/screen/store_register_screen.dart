@@ -1,10 +1,12 @@
 import 'package:ala_pos/features/onboarding/screen/success_register_screen.dart';
 import 'package:ala_pos/shared/assets.gen.dart';
 import 'package:ala_ui/ala_ui.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+@RoutePage(name: "storeRegister")
 class StoreRegisterScreen extends StatelessWidget {
   const StoreRegisterScreen({super.key});
 

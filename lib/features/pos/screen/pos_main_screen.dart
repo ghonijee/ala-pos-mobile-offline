@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:ala_pos/features/pos/screen/pos_cart_screen.dart';
 import 'package:ala_pos/shared/widget/appbar/appbar_search_component.dart';
 import 'package:ala_ui/ala_ui.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -14,6 +15,7 @@ import '../../../shared/widget/card/tag_component.dart';
 
 enum ViewMode { Grid, List }
 
+@RoutePage(name: "PosMain")
 class PosMainScreen extends StatelessWidget {
   const PosMainScreen({super.key});
 

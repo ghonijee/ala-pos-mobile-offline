@@ -1,4 +1,10 @@
+import 'dart:developer';
+
+import 'package:ala_pos/app/router/app_router.gr.dart';
+import 'package:ala_pos/features/pos/screen/pos_main_screen.dart';
+import 'package:ala_pos/features/transaction/screen/transaction_main_screen.dart';
 import 'package:ala_ui/ala_ui.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -76,21 +82,14 @@ class SideMenuView extends StatelessWidget {
             child: ListView(
               padding: EdgeInsets.zero,
               children: [
-                FutureBuilder<bool>(
-                  initialData: true,
-                  builder: (context, snapshot) {
-                    if (snapshot.data == false) {
-                      return SizedBox();
-                    }
-                    return SideMenuItemWidget(
-                      title: "Kasir",
-                      onTap: () {
-                        // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
-                      },
-                      iconData: EvaIcons.plus_square_outline,
-                      isActive: true,
-                    );
+                SideMenuItemWidget(
+                  title: "Kasir",
+                  onTap: () {
+                    log(context.router.current.name);
+                    // AutoRouter.of(context).replace(const PosMain());
                   },
+                  iconData: EvaIcons.plus_square_outline,
+                  isActive: context.router.current.name == PosMain.name,
                 ),
                 SizedBox(
                   height: Space.s,
@@ -98,9 +97,10 @@ class SideMenuView extends StatelessWidget {
                 SideMenuItemWidget(
                   title: "Riwayat Transaksi",
                   onTap: () {
-                    // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
+                    AutoRouter.of(context).replace(TransactionMain());
                   },
                   iconData: EvaIcons.book_outline,
+                  isActive: context.router.current.name == TransactionMain.name,
                 ),
                 SizedBox(
                   height: Space.s,
