@@ -28,50 +28,55 @@ class SideMenuView extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 8),
             height: 50.sp,
             child: DrawerHeader(
-                child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // Container(
-                //   width: 40,
-                //   height: 40,
-                //   decoration: BoxDecoration(
-                //       borderRadius: BorderRadius.circular(90),
-                //       border: Border.all(
-                //         color: theme.color.outline,
-                //         width: 2,
-                //       )),
-                //   child: Icon(
-                //     IonIcons.person_circle,
-                //     size: 30,
-                //   ),
-                // ),
-                // SizedBox(
-                //   width: Space.lg,
-                // ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "BAKSO PEDAS",
-                      style: theme.typo.titleMedium!.copyWith(color: theme.color.primary),
-                    ),
-                    SizedBox(
-                      height: Space.xs,
-                    ),
-                    Text(
-                      "Kelola Toko",
-                      style: theme.typo.bodySmall!.copyWith(color: theme.color.onBackground),
-                    ),
-                  ],
-                ),
-                Expanded(child: SizedBox()),
-                Icon(
-                  EvaIcons.chevron_right,
-                  size: 28,
-                ),
-              ],
+                child: InkWell(
+              onTap: () {
+                context.router.push(StoreProfile());
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // Container(
+                  //   width: 40,
+                  //   height: 40,
+                  //   decoration: BoxDecoration(
+                  //       borderRadius: BorderRadius.circular(90),
+                  //       border: Border.all(
+                  //         color: theme.color.outline,
+                  //         width: 2,
+                  //       )),
+                  //   child: Icon(
+                  //     IonIcons.person_circle,
+                  //     size: 30,
+                  //   ),
+                  // ),
+                  // SizedBox(
+                  //   width: Space.lg,
+                  // ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "BAKSO PEDAS",
+                        style: theme.typo.titleMedium!.copyWith(color: theme.color.primary),
+                      ),
+                      SizedBox(
+                        height: Space.xs,
+                      ),
+                      Text(
+                        "Kelola Toko",
+                        style: theme.typo.bodySmall!.copyWith(color: theme.color.onBackground),
+                      ),
+                    ],
+                  ),
+                  Expanded(child: SizedBox()),
+                  Icon(
+                    EvaIcons.chevron_right,
+                    size: 28,
+                  ),
+                ],
+              ),
             )),
           ),
           SizedBox(

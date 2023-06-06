@@ -107,7 +107,7 @@ class TransactionMainScreen extends StatelessWidget {
                                       statusTemp.shuffle();
                                       return ListTile(
                                         onTap: () {
-                                          AutoRouter.of(context).push(const TransactionDetail());
+                                          AutoRouter.of(context).push(TransactionDetail());
                                         },
                                         contentPadding: EdgeInsets.zero,
                                         leading: statusTemp[0]

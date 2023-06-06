@@ -12,6 +12,8 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: PosMain.page),
         AutoRoute(page: TransactionMain.page),
         AutoRoute(page: TransactionDetail.page),
+        AutoRoute(page: StoreProfile.page),
+        AutoRoute(page: StoreFormProfile.page),
         // AutoRoute(page: Tr)
 
         /// routes go here
