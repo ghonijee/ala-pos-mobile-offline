@@ -129,10 +129,10 @@ class TransactionDetailScreen extends StatelessWidget {
                                               false == false
                                                   ? Column(
                                                       children: [
-                                                        SizedBox(
-                                                          height: 4,
+                                                        FreeSpace.h(
+                                                          4,
                                                         ),
-                                                        Text("Catatan kaki" ?? ""),
+                                                        Text("Catatan kaki"),
                                                       ],
                                                     )
                                                   : SizedBox(),

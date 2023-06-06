@@ -53,7 +53,7 @@ class _TextFieldComponentState extends State<TextFieldComponent> {
                 children: [
                   Text(
                     widget.labelText ?? "Label",
-                    style: theme.typo.labelLarge,
+                    style: theme.typo.bodyMedium,
                   ),
                   SizedBox(
                     height: Space.s.sp,
@@ -74,8 +74,6 @@ class _TextFieldComponentState extends State<TextFieldComponent> {
             hintStyle: theme.typo.labelLarge,
             filled: true,
             fillColor: theme.color.surface,
-            // icon: widget.prefix,
-
             contentPadding: const EdgeInsets.symmetric(
               vertical: 12,
               horizontal: 16,

@@ -82,13 +82,10 @@ class PosCartItemDetailScreen extends StatelessWidget {
                         TextFieldComponent(
                           withLabel: true,
                           labelText: "Nilai Diskon",
-                          prefix: Text(
-                            "Rp. ",
-                            style: theme.typo.bodyMedium,
-                          ),
-                          suffix: Text(
-                            " %",
-                            style: theme.typo.bodyMedium,
+                          // prefix: Text("Rp. "),
+                          suffix: Icon(
+                            EvaIcons.percent_outline,
+                            size: 20.px,
                           ),
                         ),
                         FreeSpace.h(Space.l),

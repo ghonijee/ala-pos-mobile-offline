@@ -42,7 +42,7 @@ class StoreProfileScreen extends StatelessWidget {
             // Header
             Container(
               width: 100.w,
-              height: 150.px,
+              // height: 150.px,
               decoration: BoxDecoration(
                 color: theme.color.surface,
               ),
@@ -50,6 +50,7 @@ class StoreProfileScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  FreeSpace.h(Space.xxl.sp),
                   Container(
                     alignment: Alignment.center,
                     width: 36.sp,
@@ -72,7 +73,8 @@ class StoreProfileScreen extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: theme.color.primary,
                         ),
-                  )
+                  ),
+                  FreeSpace.h(Space.xxl.sp),
                 ],
               ),
             ),
@@ -140,7 +142,7 @@ class CardProfileSection extends StatelessWidget {
                   ? InkWell(
                       onTap: navigationEdit,
                       child: Icon(
-                        BoxIcons.bx_edit_alt,
+                        LineAwesome.edit,
                         size: 20.px,
                       ),
                     )
@@ -175,7 +177,7 @@ class CardProfileSection extends StatelessWidget {
                                 : InkWell(
                                     onTap: () => context.router.push(item.pageRouteInfo!),
                                     child: Icon(
-                                      EvaIcons.arrow_forward_outline,
+                                      LineAwesome.arrow_right_solid,
                                       size: 20.px,
                                     ),
                                   ),

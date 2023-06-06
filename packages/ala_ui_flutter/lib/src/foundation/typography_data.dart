@@ -132,9 +132,9 @@ class TypographyData {
         bodyLarge: const TextStyles().bodylarge.copyWith(color: ColorsToken.syslightonbackground),
         bodyMedium: const TextStyles().bodymedium.copyWith(color: ColorsToken.syslightonbackground),
         bodySmall: const TextStyles().bodysmall.copyWith(color: ColorsToken.syslightonbackground),
-        labelLarge: const TextStyles().labellarge,
-        labelMedium: const TextStyles().labelmedium,
-        labelSmall: const TextStyles().labelsmall,
+        labelLarge: const TextStyles().labellarge.copyWith(color: ColorsToken.syslightonbackground),
+        labelMedium: const TextStyles().labelmedium.copyWith(color: ColorsToken.syslightonbackground),
+        labelSmall: const TextStyles().labelsmall.copyWith(color: ColorsToken.syslightonbackground),
       );
 
   /// A Material Design text theme with dark glyphs based on Roboto.
