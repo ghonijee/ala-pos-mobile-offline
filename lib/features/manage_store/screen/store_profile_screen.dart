@@ -61,7 +61,7 @@ class StoreProfileScreen extends StatelessWidget {
                       borderRadius: theme.shape.m,
                     ),
                     child: Text(
-                      "BS",
+                      "LQ",
                       style: theme.typo.displaySmall,
                     ),
                   ),
@@ -69,7 +69,7 @@ class StoreProfileScreen extends StatelessWidget {
                     height: Space.l.sp,
                   ),
                   Text(
-                    "BINQAN STR.",
+                    "LOQOMIND",
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: theme.color.primary,
                         ),
@@ -82,7 +82,7 @@ class StoreProfileScreen extends StatelessWidget {
             // Profile Section
             CardProfileSection(
               titleSection: "Detail",
-              navigationEdit: () => context.router.push(StoreFormProfile()),
+              navigationEdit: () => context.router.push(const StoreFormProfile()),
               data: [
                 ProfileDataValue(label: "No. HP", value: "081726778991"),
                 ProfileDataValue(label: "Email", value: "loqomind@gmail.com"),
@@ -97,7 +97,7 @@ class StoreProfileScreen extends StatelessWidget {
               titleSection: "Master Data",
               // navigationEdit: () => context.router.push(StoreFormProfile()),
               data: [
-                ProfileDataValue(label: "Kategori Produk", pageRouteInfo: StoreFormProfile()),
+                ProfileDataValue(label: "Kategori Produk", pageRouteInfo: const CategoryMainList()),
               ],
             ),
           ],
@@ -146,7 +146,7 @@ class CardProfileSection extends StatelessWidget {
                         size: 20.px,
                       ),
                     )
-                  : SizedBox()
+                  : const SizedBox()
             ],
           ),
           FreeSpace.h(Space.xl),
