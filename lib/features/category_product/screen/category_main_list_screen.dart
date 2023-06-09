@@ -1,3 +1,4 @@
+import 'package:ala_pos/app/router/app_router.gr.dart';
 import 'package:ala_ui/ala_ui.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class CategoryMainListScreen extends StatelessWidget {
         actions: [
           InkWell(
             onTap: () {
-              //
+              context.router.push(const CategoryForm());
             },
             child: Icon(
               EvaIcons.plus_circle_outline,
@@ -44,34 +45,40 @@ class CategoryMainListScreen extends StatelessWidget {
           FreeSpace.w(16.sp),
         ],
       ),
-      body: ListView.separated(
-        separatorBuilder: (context, index) => Divider(
-          height: 0.2.sp,
-          color: theme.color.outlineVariant,
-        ),
+      body: ReorderableList(
+        onReorder: (oldIndex, newIndex) {
+          print(oldIndex.toString());
+          print(newIndex.toString());
+        },
+        // separatorBuilder: (context, index) => Divider(
+        //   height: 0.2.sp,
+        //   color: theme.color.outlineVariant,
+        // ),
         itemCount: 9,
         itemBuilder: (context, index) {
           return ListTile(
+            onTap: () => context.router.push(CategoryForm()),
+            key: Key(index.toString()),
             contentPadding: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 20.sp),
             tileColor: theme.color.surface,
-            leading: Text(
-              "${index + 1}",
-              style: theme.typo.bodyMedium,
-            ),
+            // leading: Text(
+            //   "${index + 1}",
+            //   style: theme.typo.bodyMedium,
+            // ),
             title: Text(
               AutofillHints.addressCity,
               style: theme.typo.bodyMedium,
             ),
-            trailing: SizedBox(
-              height: 8.sp,
-              child: Switch.adaptive(
-                splashRadius: 40,
-                value: false,
-                onChanged: (value) {
-                  //
-                },
-              ),
-            ),
+            // trailing: SizedBox(
+            //   height: 8.sp,
+            //   child: Switch.adaptive(
+            //     splashRadius: 40,
+            //     value: false,
+            //     onChanged: (value) {
+            //       //
+            //     },
+            //   ),
+            // ),
           );
         },
       ),

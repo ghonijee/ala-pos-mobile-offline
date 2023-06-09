@@ -11,6 +11,8 @@
 import 'package:ala_pos/app/screens/splash_screen.dart' as _i1;
 import 'package:ala_pos/features/category_product/screen/category_main_list_screen.dart'
     as _i9;
+import 'package:ala_pos/features/category_product/screen/caterory_form_screen.dart'
+    as _i10;
 import 'package:ala_pos/features/manage_store/screen/store_form_profile_screen.dart'
     as _i7;
 import 'package:ala_pos/features/manage_store/screen/store_profile_screen.dart'
@@ -24,16 +26,16 @@ import 'package:ala_pos/features/transaction/screen/transaction_detail_screen.da
     as _i6;
 import 'package:ala_pos/features/transaction/screen/transaction_main_screen.dart'
     as _i2;
-import 'package:auto_route/auto_route.dart' as _i10;
-import 'package:flutter/material.dart' as _i11;
+import 'package:auto_route/auto_route.dart' as _i11;
+import 'package:flutter/material.dart' as _i12;
 
-abstract class $AppRouter extends _i10.RootStackRouter {
+abstract class $AppRouter extends _i11.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i10.PageFactory> pagesMap = {
+  final Map<String, _i11.PageFactory> pagesMap = {
     Splash.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i1.SplashScreen(),
       );
@@ -41,25 +43,25 @@ abstract class $AppRouter extends _i10.RootStackRouter {
     TransactionMain.name: (routeData) {
       final args = routeData.argsAs<TransactionMainArgs>(
           orElse: () => const TransactionMainArgs());
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i2.TransactionMainScreen(key: args.key),
       );
     },
     PosMain.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i3.PosMainScreen(),
       );
     },
     StoreRegister.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i4.StoreRegisterScreen(),
       );
     },
     StoreRegisterSuccess.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i5.SuccessRegisterScreen(),
       );
@@ -67,27 +69,33 @@ abstract class $AppRouter extends _i10.RootStackRouter {
     TransactionDetail.name: (routeData) {
       final args = routeData.argsAs<TransactionDetailArgs>(
           orElse: () => const TransactionDetailArgs());
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i6.TransactionDetailScreen(key: args.key),
       );
     },
     StoreFormProfile.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i7.StoreFormProfileScreen(),
       );
     },
     StoreProfile.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i8.StoreProfileScreen(),
       );
     },
     CategoryMainList.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
+      return _i11.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i9.CategoryMainListScreen(),
+      );
+    },
+    CategoryForm.name: (routeData) {
+      return _i11.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i10.CategoryFormScreen(),
       );
     },
   };
@@ -95,8 +103,8 @@ abstract class $AppRouter extends _i10.RootStackRouter {
 
 /// generated route for
 /// [_i1.SplashScreen]
-class Splash extends _i10.PageRouteInfo<void> {
-  const Splash({List<_i10.PageRouteInfo>? children})
+class Splash extends _i11.PageRouteInfo<void> {
+  const Splash({List<_i11.PageRouteInfo>? children})
       : super(
           Splash.name,
           initialChildren: children,
@@ -104,15 +112,15 @@ class Splash extends _i10.PageRouteInfo<void> {
 
   static const String name = 'Splash';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i2.TransactionMainScreen]
-class TransactionMain extends _i10.PageRouteInfo<TransactionMainArgs> {
+class TransactionMain extends _i11.PageRouteInfo<TransactionMainArgs> {
   TransactionMain({
-    _i11.Key? key,
-    List<_i10.PageRouteInfo>? children,
+    _i12.Key? key,
+    List<_i11.PageRouteInfo>? children,
   }) : super(
           TransactionMain.name,
           args: TransactionMainArgs(key: key),
@@ -121,14 +129,14 @@ class TransactionMain extends _i10.PageRouteInfo<TransactionMainArgs> {
 
   static const String name = 'TransactionMain';
 
-  static const _i10.PageInfo<TransactionMainArgs> page =
-      _i10.PageInfo<TransactionMainArgs>(name);
+  static const _i11.PageInfo<TransactionMainArgs> page =
+      _i11.PageInfo<TransactionMainArgs>(name);
 }
 
 class TransactionMainArgs {
   const TransactionMainArgs({this.key});
 
-  final _i11.Key? key;
+  final _i12.Key? key;
 
   @override
   String toString() {
@@ -138,8 +146,8 @@ class TransactionMainArgs {
 
 /// generated route for
 /// [_i3.PosMainScreen]
-class PosMain extends _i10.PageRouteInfo<void> {
-  const PosMain({List<_i10.PageRouteInfo>? children})
+class PosMain extends _i11.PageRouteInfo<void> {
+  const PosMain({List<_i11.PageRouteInfo>? children})
       : super(
           PosMain.name,
           initialChildren: children,
@@ -147,13 +155,13 @@ class PosMain extends _i10.PageRouteInfo<void> {
 
   static const String name = 'PosMain';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i4.StoreRegisterScreen]
-class StoreRegister extends _i10.PageRouteInfo<void> {
-  const StoreRegister({List<_i10.PageRouteInfo>? children})
+class StoreRegister extends _i11.PageRouteInfo<void> {
+  const StoreRegister({List<_i11.PageRouteInfo>? children})
       : super(
           StoreRegister.name,
           initialChildren: children,
@@ -161,13 +169,13 @@ class StoreRegister extends _i10.PageRouteInfo<void> {
 
   static const String name = 'StoreRegister';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i5.SuccessRegisterScreen]
-class StoreRegisterSuccess extends _i10.PageRouteInfo<void> {
-  const StoreRegisterSuccess({List<_i10.PageRouteInfo>? children})
+class StoreRegisterSuccess extends _i11.PageRouteInfo<void> {
+  const StoreRegisterSuccess({List<_i11.PageRouteInfo>? children})
       : super(
           StoreRegisterSuccess.name,
           initialChildren: children,
@@ -175,15 +183,15 @@ class StoreRegisterSuccess extends _i10.PageRouteInfo<void> {
 
   static const String name = 'StoreRegisterSuccess';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i6.TransactionDetailScreen]
-class TransactionDetail extends _i10.PageRouteInfo<TransactionDetailArgs> {
+class TransactionDetail extends _i11.PageRouteInfo<TransactionDetailArgs> {
   TransactionDetail({
-    _i11.Key? key,
-    List<_i10.PageRouteInfo>? children,
+    _i12.Key? key,
+    List<_i11.PageRouteInfo>? children,
   }) : super(
           TransactionDetail.name,
           args: TransactionDetailArgs(key: key),
@@ -192,14 +200,14 @@ class TransactionDetail extends _i10.PageRouteInfo<TransactionDetailArgs> {
 
   static const String name = 'TransactionDetail';
 
-  static const _i10.PageInfo<TransactionDetailArgs> page =
-      _i10.PageInfo<TransactionDetailArgs>(name);
+  static const _i11.PageInfo<TransactionDetailArgs> page =
+      _i11.PageInfo<TransactionDetailArgs>(name);
 }
 
 class TransactionDetailArgs {
   const TransactionDetailArgs({this.key});
 
-  final _i11.Key? key;
+  final _i12.Key? key;
 
   @override
   String toString() {
@@ -209,8 +217,8 @@ class TransactionDetailArgs {
 
 /// generated route for
 /// [_i7.StoreFormProfileScreen]
-class StoreFormProfile extends _i10.PageRouteInfo<void> {
-  const StoreFormProfile({List<_i10.PageRouteInfo>? children})
+class StoreFormProfile extends _i11.PageRouteInfo<void> {
+  const StoreFormProfile({List<_i11.PageRouteInfo>? children})
       : super(
           StoreFormProfile.name,
           initialChildren: children,
@@ -218,13 +226,13 @@ class StoreFormProfile extends _i10.PageRouteInfo<void> {
 
   static const String name = 'StoreFormProfile';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i8.StoreProfileScreen]
-class StoreProfile extends _i10.PageRouteInfo<void> {
-  const StoreProfile({List<_i10.PageRouteInfo>? children})
+class StoreProfile extends _i11.PageRouteInfo<void> {
+  const StoreProfile({List<_i11.PageRouteInfo>? children})
       : super(
           StoreProfile.name,
           initialChildren: children,
@@ -232,13 +240,13 @@ class StoreProfile extends _i10.PageRouteInfo<void> {
 
   static const String name = 'StoreProfile';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i9.CategoryMainListScreen]
-class CategoryMainList extends _i10.PageRouteInfo<void> {
-  const CategoryMainList({List<_i10.PageRouteInfo>? children})
+class CategoryMainList extends _i11.PageRouteInfo<void> {
+  const CategoryMainList({List<_i11.PageRouteInfo>? children})
       : super(
           CategoryMainList.name,
           initialChildren: children,
@@ -246,5 +254,19 @@ class CategoryMainList extends _i10.PageRouteInfo<void> {
 
   static const String name = 'CategoryMainList';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i10.CategoryFormScreen]
+class CategoryForm extends _i11.PageRouteInfo<void> {
+  const CategoryForm({List<_i11.PageRouteInfo>? children})
+      : super(
+          CategoryForm.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CategoryForm';
+
+  static const _i11.PageInfo<void> page = _i11.PageInfo<void>(name);
 }

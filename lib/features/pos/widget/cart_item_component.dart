@@ -53,7 +53,7 @@ class _CartItemComponentState extends State<CartItemComponent> {
                     style: theme.typo.bodyMedium,
                   ),
                   FreeSpace.h(4.sp),
-                  true
+                  true == false
                       ? Text.rich(
                           TextSpan(
                             text: "15.000",
@@ -70,13 +70,13 @@ class _CartItemComponentState extends State<CartItemComponent> {
                           "15.000",
                           style: theme.typo.bodyMedium,
                         ),
-                  false
+                  false == true
                       ? Column(
                           children: [
                             SizedBox(
                               height: 4,
                             ),
-                            Text("Catatan kaki" ?? ""),
+                            Text("Catatan kaki"),
                           ],
                         )
                       : SizedBox(),
