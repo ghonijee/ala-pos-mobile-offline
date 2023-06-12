@@ -21,7 +21,7 @@ class PosMainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ViewMode viewMode = ViewMode.List;
+    ViewMode viewMode = ViewMode.Grid;
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     return Scaffold(
@@ -51,7 +51,7 @@ class PosMainScreen extends StatelessWidget {
                   InkWell(
                     child: Icon(
                       Bootstrap.camera,
-                      size: 24.px,
+                      size: 20.px,
                       color: context.theme.color.onPrimary,
                     ),
                   ),
@@ -63,7 +63,7 @@ class PosMainScreen extends StatelessWidget {
                           // onTap: () => viewMode.value = ViewMode.Grid,
                           child: Icon(
                             EvaIcons.list_outline,
-                            size: 24.px,
+                            size: 20.px,
                             color: context.theme.color.onPrimary,
                           ),
                         )
@@ -71,7 +71,7 @@ class PosMainScreen extends StatelessWidget {
                           // onTap: () => viewMode.value = ViewMode.List,
                           child: Icon(
                             EvaIcons.grid_outline,
-                            size: 24.px,
+                            size: 20.px,
                             color: context.theme.color.onPrimary,
                           ),
                         ),

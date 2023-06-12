@@ -15,7 +15,9 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: StoreProfile.page),
         AutoRoute(page: StoreFormProfile.page),
         AutoRoute(page: CategoryMainList.page),
-        AutoRoute(page: CategoryForm.page)
+        AutoRoute(page: CategoryForm.page),
+        AutoRoute(page: ProductMainList.page),
+        AutoRoute(page: ProductForm.page)
         // AutoRoute(page: Tr)
 
         /// routes go here

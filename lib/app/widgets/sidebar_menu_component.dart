@@ -25,12 +25,12 @@ class SideMenuView extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
             height: 50.sp,
             child: DrawerHeader(
                 child: InkWell(
               onTap: () {
-                context.router.push(StoreProfile());
+                context.router.push(const StoreProfile());
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -70,8 +70,8 @@ class SideMenuView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Expanded(child: SizedBox()),
-                  Icon(
+                  const Expanded(child: SizedBox()),
+                  const Icon(
                     EvaIcons.chevron_right,
                     size: 28,
                   ),
@@ -90,8 +90,8 @@ class SideMenuView extends StatelessWidget {
                 SideMenuItemWidget(
                   title: "Kasir",
                   onTap: () {
-                    log(context.router.current.name);
-                    // AutoRouter.of(context).replace(const PosMain());
+                    // log(context.router.current.name);
+                    AutoRouter.of(context).replace(const PosMain());
                   },
                   iconData: EvaIcons.plus_square_outline,
                   isActive: context.router.current.name == PosMain.name,
@@ -123,9 +123,10 @@ class SideMenuView extends StatelessWidget {
                 SideMenuItemWidget(
                   title: "Kelola Produk",
                   onTap: () {
-                    // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
+                    AutoRouter.of(context).replace(const ProductMainList());
                   },
                   iconData: EvaIcons.archive_outline,
+                  isActive: context.router.current.name == ProductMainList.name,
                 ),
                 SizedBox(
                   height: Space.s,

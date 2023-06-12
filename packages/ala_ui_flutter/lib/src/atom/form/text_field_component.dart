@@ -71,7 +71,7 @@ class _TextFieldComponentState extends State<TextFieldComponent> {
           textAlign: widget.textAlign,
           decoration: InputDecoration(
             hintText: widget.hintText,
-            hintStyle: theme.typo.labelLarge,
+            hintStyle: theme.typo.labelLarge!.copyWith(color: theme.color.onSurfaceVariant),
             filled: true,
             fillColor: theme.color.surface,
             contentPadding: const EdgeInsets.symmetric(

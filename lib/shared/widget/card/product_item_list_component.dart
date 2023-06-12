@@ -40,13 +40,17 @@ class _ProductItemListComponentState extends State<ProductItemListComponent> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            "Stok",
-            style: theme.typo.labelMedium!.copyWith(color: theme.color.onBackground),
-          ),
-          Text(
-            "99",
-            style: theme.typo.labelMedium!.copyWith(color: theme.color.onBackground),
+          // Text(
+          //   "Stok",
+          //   style: theme.typo.labelMedium!.copyWith(color: theme.color.onBackground),
+          // ),
+          Container(
+            padding: EdgeInsets.fromLTRB(8, 4, 8, 4),
+            decoration: BoxDecoration(color: theme.color.secondaryContainer, borderRadius: theme.shape.s),
+            child: Text(
+              "99",
+              style: theme.typo.bodyMedium!.copyWith(color: theme.color.onSecondaryContainer),
+            ),
           ),
         ],
       ),
