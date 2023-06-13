@@ -63,7 +63,7 @@ class PosMainScreen extends StatelessWidget {
                           // onTap: () => viewMode.value = ViewMode.Grid,
                           child: Icon(
                             EvaIcons.list_outline,
-                            size: 20.px,
+                            size: 24.px,
                             color: context.theme.color.onPrimary,
                           ),
                         )
@@ -71,7 +71,7 @@ class PosMainScreen extends StatelessWidget {
                           // onTap: () => viewMode.value = ViewMode.List,
                           child: Icon(
                             EvaIcons.grid_outline,
-                            size: 20.px,
+                            size: 24.px,
                             color: context.theme.color.onPrimary,
                           ),
                         ),
