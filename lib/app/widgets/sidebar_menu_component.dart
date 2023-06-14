@@ -113,9 +113,10 @@ class SideMenuView extends StatelessWidget {
                 SideMenuItemWidget(
                   title: "Laporan",
                   onTap: () {
-                    // AutoRouter.of(context).replaceNamed(RouteName.posWrapper);
+                    AutoRouter.of(context).replace(ReportMain());
                   },
                   iconData: EvaIcons.pie_chart_outline,
+                  isActive: context.router.current.name == ReportMain.name,
                 ),
                 SizedBox(
                   height: Space.s,
@@ -123,7 +124,7 @@ class SideMenuView extends StatelessWidget {
                 SideMenuItemWidget(
                   title: "Kelola Produk",
                   onTap: () {
-                    AutoRouter.of(context).replace(const ProductMainList());
+                    AutoRouter.of(context).replace(ProductMainList());
                   },
                   iconData: EvaIcons.archive_outline,
                   isActive: context.router.current.name == ProductMainList.name,

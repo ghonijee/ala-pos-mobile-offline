@@ -32,7 +32,7 @@ class SideMenuItemWidget extends StatelessWidget {
           children: [
             Icon(
               iconData,
-              color: isActive ? theme.color.primary : theme.color.tertiary,
+              color: isActive ? theme.color.onPrimaryContainer : theme.color.tertiary,
             ),
             SizedBox(
               width: 24,
@@ -40,7 +40,7 @@ class SideMenuItemWidget extends StatelessWidget {
             Text(
               title,
               style: theme.typo.labelLarge?.copyWith(
-                color: isActive ? theme.color.primary : theme.color.tertiary,
+                color: isActive ? theme.color.onPrimaryContainer : theme.color.tertiary,
               ),
             ),
           ],
